@@ -10,25 +10,22 @@ echo "gianOnArch" >> /etc/hostname
 echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 gianOnArch.localdomain gianOnArch" >> /etc/hosts
-echo root:password | chpasswd
 
 # General packages 
-pacman -S grub efibootmgr intel-ucode dhcpcd networkmanager network-manager-applet netwokmanager-openvpn \
+pacman -S grub efibootmgr intel-ucode dhcpcd networkmanager network-manager-applet networkmanager-openvpn \
         mtools dosfstools ntfs-3g linux-headers avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils \
-        inetutils dnsutils bluez bluez-utils cups cups-pdf hplip alsa-utils pulseaudio pulseaudio-alsa pulseaudio-bluez pavucontrol\
-        bash-completion openssh acpid polkit-gnome lxappearance light noto-fonts ttf-roboto ttf-hack
+        inetutils dnsutils bluez bluez-utils cups cups-pdf hplip alsa-utils pulseaudio pulseaudio-alsa pulseaudio-bluetooth pavucontrol\
+        bash-completion openssh acpid polkit-gnome xorg-server xorg-xinit xorg-xrandr nvidia nvidia-utils lxappearance light noto-fonts ttf-roboto ttf-hack ttf-font-awesome \
+	arandr htop mpv playerctl
 
-# Xorg and nvidia
-pacman -S xorg xorg-xinit xorg-xrandr nvidia nvidia-utils
 
 # Boot loader
-grub-install --target=x86_64-efi --efi-directory=boot --bootloader-id=GRUB 
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB 
 
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # Adding user
 useradd -m -G ftp,http,sys,wheel,dbus,audio,disk,input,storage,video -s /bin/bash gian
-echo gian:password | chpasswd
 
 # Service enable
 systemctl enable NetworkManager
