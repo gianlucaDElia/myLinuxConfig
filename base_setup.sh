@@ -16,7 +16,7 @@ echo root:password | chpasswd
 pacman -S grub efibootmgr intel-ucode dhcpcd networkmanager network-manager-applet netwokmanager-openvpn \
         mtools dosfstools ntfs-3g linux-headers avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils \
         inetutils dnsutils bluez bluez-utils cups cups-pdf hplip alsa-utils pulseaudio pulseaudio-alsa pulseaudio-bluez pavucontrol\
-        bash-completion openssh acpid polkit-gnome lxappearance noto-fonts ttf-roboto ttf-hack
+        bash-completion openssh acpid polkit-gnome lxappearance light noto-fonts ttf-roboto ttf-hack
 
 # Xorg and nvidia
 pacman -S xorg xorg-xinit xorg-xrandr nvidia nvidia-utils
