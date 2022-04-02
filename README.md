@@ -1,3 +1,6 @@
 # myLinuxConfig
 
-General UEFI installation script.
+sxiv
+ytfzf
+nnn
+fzf

@@ -1,6 +1,6 @@
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
-dwmstatus 2>&1 >/dev/null &
 xrdb ~/.Xresources
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
+slstatus &
 exec dwm

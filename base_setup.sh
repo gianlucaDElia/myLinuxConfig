@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ln -sf /user/share/zoneinfo/Europe/Rome /etc/localtime
+ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
 hwclock --systohc
 sed -i '178s/.//' /etc/locale.gen
 locale-gen
