@@ -4,7 +4,7 @@ yay
 google-chrome
 root
 mpv
-sxiv
+feh
 ytfzf
 nnn
 fzf
