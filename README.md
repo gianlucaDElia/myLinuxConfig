@@ -14,3 +14,9 @@ Reload keyboard configuration
 ```
 sudo setxkbmap
 ```
+# Google DNS
+Add the following lines indented under an iface in file /etc/network/interfaces
+```
+        dns-nameserver 8.8.8.8
+        dns-nameserver 8.8.4.4
+```
