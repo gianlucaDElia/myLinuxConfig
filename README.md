@@ -15,4 +15,4 @@ Reload keyboard configuration
 sudo setxkbmap
 ```
 # Google DNS
-Remove all the lines regarding the physical ethernet controllers from /etc/network/interfaces file. Then configure it from Network Manager GUI
+Remove all the lines regarding the physical ethernet controllers from /etc/network/interfaces file. Then configure them from Network Manager GUI
