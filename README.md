@@ -20,3 +20,9 @@ Remove all the lines regarding the physical ethernet controllers from /etc/netwo
 # Staf for c++
 ```
 sudo apt install build-essential git cmake ninja-build libfftw3-dev libboost-all-dev libvtk9-dev libhdf5-dev libdb-dev libdb++-dev libleveldb-dev
+
+# Installing Julia
+Download tar.gz from julia website and upack it in /opt folder, then create a link:
+```
+sudo ln -s /opt/julia-version/bin/julia /usr/local/bin/julia
+```
