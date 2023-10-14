@@ -15,8 +15,4 @@ Reload keyboard configuration
 sudo setxkbmap
 ```
 # Google DNS
-Add the following lines indented under an iface in file /etc/network/interfaces
-```
-        dns-nameserver 8.8.8.8
-        dns-nameserver 8.8.4.4
-```
+Remove all the line regarding the physical ethernet controller from /etc/network/interfaces file. Then configure it from Network Manager GUI
