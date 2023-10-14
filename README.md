@@ -16,3 +16,7 @@ sudo setxkbmap
 ```
 # Google DNS
 Remove all the lines regarding the physical ethernet controllers from /etc/network/interfaces file. Then configure them from Network Manager GUI
+
+# Staf for c++
+```
+sudo apt install build-essential git cmake ninja-build libfftw3-dev libboost-all-dev libvtk9-dev libhdf5-dev
