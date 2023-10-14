@@ -19,4 +19,4 @@ Remove all the lines regarding the physical ethernet controllers from /etc/netwo
 
 # Staf for c++
 ```
-sudo apt install build-essential git cmake ninja-build libfftw3-dev libboost-all-dev libvtk9-dev libhdf5-dev
+sudo apt install build-essential git cmake ninja-build libfftw3-dev libboost-all-dev libvtk9-dev libhdf5-dev libdb-dev libdb++-dev libleveldb-dev
