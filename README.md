@@ -41,7 +41,7 @@ x11vnc -display :0 -auth $(find /var/run/sddm/ -type f)
 # Fedora minimal gnome
 ```
 # base
-sudo dnf install @base-x @Fonts @Multimedia gnome-shell gnome-console nautilus gnome-tweaks gnome-system-monitor gnome-disk-utility gnome-text-editor eog gnome-calculator celluloid rhythmbox file-roller gnome-session-xsession NetworkManager-wifi xdg-user-dirs xdg-user-dirs-gtk xdg-utils xdg-desktop-portal-gnome gvfs* git bash-completion systemd-boot-unsigned wget unzip -y
+sudo dnf install @base-x @Fonts @Multimedia gnome-shell gnome-console nautilus gnome-tweaks gnome-system-monitor gnome-disk-utility gnome-text-editor eog gnome-calculator file-roller gnome-session-xsession NetworkManager-wifi xdg-user-dirs xdg-user-dirs-gtk xdg-utils xdg-desktop-portal-gnome gvfs* git bash-completion wget unzip -y
 sudo systemctl enable gdm bluetooth NetworkManager
 
 # repo
