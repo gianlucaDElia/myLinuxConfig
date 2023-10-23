@@ -37,13 +37,3 @@ Starting logged out with kde (sddm):
 ```
 x11vnc -display :0 -auth $(find /var/run/sddm/ -type f)
 ```
-
-# Fedora minimal gnome
-```
-# base
-sudo dnf install @base-x @Fonts @Multimedia gnome-shell gnome-console nautilus gnome-tweaks gnome-system-monitor gnome-disk-utility gnome-text-editor eog gnome-calculator file-roller gnome-session-xsession NetworkManager-wifi xdg-user-dirs xdg-user-dirs-gtk xdg-utils xdg-desktop-portal-gnome gvfs* git bash-completion wget unzip -y
-sudo systemctl enable gdm bluetooth NetworkManager
-
-# repo
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
-```
