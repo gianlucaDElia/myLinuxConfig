@@ -16,7 +16,7 @@ sudo setxkbmap
 # Touchpad configuration
 Edit /etc/X11/xorg.conf.d/30-touchpad.conf
 ```
-ection "InputClass"
+Section "InputClass"
     Identifier "devname"
     Driver "libinput"
     MatchIsTouchpad "on"
