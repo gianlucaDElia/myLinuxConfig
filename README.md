@@ -25,7 +25,7 @@ Section "InputClass"
     Option "NaturalScrolling" "true"
 EndSection
 ```
-# Google DNS
+# Google DNS for debian
 Remove all the lines regarding the physical ethernet controllers from /etc/network/interfaces file. Then configure them from Network Manager GUI
 
 # Staf for c++
