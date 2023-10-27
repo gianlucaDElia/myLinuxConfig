@@ -5,8 +5,7 @@ Section "InputClass"
         Identifier "system-keyboard"
         MatchIsKeyboard "on"
         Option "XkbLayout" "us"
-        Option "XkbModel" "pc104"
-        Option "XkbVariant" "intl"
+        Option "XkbVariant" "alt-intl"
         Option "XkbOptions" "ctrl:nocaps"
 EndSection
 ```
