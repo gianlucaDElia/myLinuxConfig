@@ -13,6 +13,18 @@ Reload keyboard configuration
 ```
 sudo setxkbmap
 ```
+# Touchpad configuration
+Edit /etc/X11/xorg.conf.d/30-touchpad.conf
+```
+ection "InputClass"
+    Identifier "devname"
+    Driver "libinput"
+    MatchIsTouchpad "on"
+    Option "Tapping" "on"
+    Option "ClickMethod" "clickfinger"
+    Option "NaturalScrolling" "true"
+EndSection
+```
 # Google DNS
 Remove all the lines regarding the physical ethernet controllers from /etc/network/interfaces file. Then configure them from Network Manager GUI
 
