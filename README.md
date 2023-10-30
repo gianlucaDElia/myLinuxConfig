@@ -28,23 +28,46 @@ EndSection
 # Google DNS for debian
 Remove all the lines regarding the physical ethernet controllers from /etc/network/interfaces file. Then configure them from Network Manager GUI
 
-# Staf for c++
-```
-sudo apt install build-essential git cmake ninja-build libfftw3-dev libboost-all-dev libvtk9-dev libhdf5-dev libdb-dev libdb++-dev libleveldb-dev
-```
-
 # Installing Julia
 Download tar.gz from julia website and upack it in /opt folder, then create a link:
 ```
 sudo ln -s /opt/julia-version/bin/julia /usr/local/bin/julia
 ```
 
-# Starting x11vnc
-Starting logged in:
+# virsh network config
+To list which networks have been defined to the libvirt daemon for use by KVM guests
 ```
-x11vnc -display :0
+virsh net-list --all
 ```
-Starting logged out with kde (sddm):
+To edit the default network
 ```
-x11vnc -display :0 -auth $(find /var/run/sddm/ -type f)
+virsh  net-edit  default
 ```
+Add dns and dhcp to the default network
+```
+<network>
+  <name>default</name>
+  <uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</uuid>
+  <forward mode='nat'/>
+  <bridge name='virbr0' stp='on' delay='0'/>
+  <mac address='52:54:00:xx:yy:zz'/>
+  <dns forwardPlainNames='no'>
+    <forwarder domain='example.lan' />
+    <host ip='192.168.X.1'>
+      <hostname>host</hostname>
+      <hostname>host.example.lan</hostname>
+    </host>
+  </dns>
+  <ip address='192.168.X.1' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='192.168.X.2' end='192.168.X.254'/>
+    </dhcp>
+  </ip>
+</network>
+```
+Activate the modified configuration
+```
+virsh net-destroy default
+virsh net-start default
+```
+Check on Fedora doc in order to use dnsmasq plugin for DNS
