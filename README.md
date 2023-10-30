@@ -71,3 +71,9 @@ virsh net-destroy default
 virsh net-start default
 ```
 Check on Fedora doc in order to use dnsmasq plugin for DNS
+
+# Port forwarding for vms under NAT
+```
+iptables -I FORWARD -o virbr0 -d 192.168.X.2 -p tcp --dport 3389 -j ACCEPT
+iptables -t nat -I PREROUTING -p tcp --dport 10002 -j DNAT -to 192.168.X.2:3389
+```
