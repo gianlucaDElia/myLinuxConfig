@@ -96,5 +96,5 @@ nft add rule nat postrouting masquerade
 Make rules permanent:
 ```
 cp /etc/nftables.conf /etc/nftables.conf.back
-nft list ruleset | tee /etct/nftables.conf
+nft list ruleset | tee /etc/nftables.conf
 ```
