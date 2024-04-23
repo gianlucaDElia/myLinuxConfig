@@ -25,16 +25,16 @@ Section "InputClass"
     Option "NaturalScrolling" "true"
 EndSection
 ```
-# Google DNS for debian
-Remove all the lines regarding the physical ethernet controllers from /etc/network/interfaces file. Then configure them from Network Manager GUI
 
-# Installing Julia
+# Debian server
+## Google DNS
+Remove all the lines regarding the physical ethernet controllers from /etc/network/interfaces file. Then configure them from Network Manager GUI
+## Installing Julia
 Download tar.gz from julia website and upack it in /opt folder, then create a link:
 ```
 sudo ln -s /opt/julia-version/bin/julia /usr/local/bin/julia
 ```
-
-# virsh network config
+## virsh network config
 To list which networks have been defined to the libvirt daemon for use by KVM guests
 ```
 virsh net-list --all
@@ -51,13 +51,6 @@ Add dns and dhcp to the default network
   <forward mode='nat'/>
   <bridge name='virbr0' stp='on' delay='0'/>
   <mac address='52:54:00:xx:yy:zz'/>
-  <dns forwardPlainNames='no'>
-    <forwarder domain='example.lan' />
-    <host ip='192.168.X.1'>
-      <hostname>host</hostname>
-      <hostname>host.example.lan</hostname>
-    </host>
-  </dns>
   <ip address='192.168.X.1' netmask='255.255.255.0'>
     <dhcp>
       <range start='192.168.X.2' end='192.168.X.254'/>
@@ -70,10 +63,38 @@ Activate the modified configuration
 virsh net-destroy default
 virsh net-start default
 ```
-Check on Fedora doc in order to use dnsmasq plugin for DNS
-
-# Port forwarding for vms under NAT
+# Port forwarding from vms under NAT
+Enable nftables
 ```
-iptables -I FORWARD -o virbr0 -d 192.168.X.2 -p tcp --dport 3389 -j ACCEPT
-iptables -t nat -I PREROUTING -p tcp --dport 10002 -j DNAT -to 192.168.X.2:3389
+systemctl enable nftables
+```
+Check if ip forwarding is enable
+```
+sysctl net.ipv4.ip_forward
+```
+output 1 means enabled, if output is 0 eneble it by
+```
+sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
+```
+and reboot.
+To list all the active rules
+```
+nft list ruleset
+```
+To clean all rules
+```
+nft flush ruleset
+```
+Create nat rules with portforwarding
+```
+nft add table nat
+nft 'add chain nat postrouting { type nat hook postrouting priority 100 ; }'
+nft 'add chain nat prerouting { type nat hook prerouting priority -100; }'
+nft 'add rule nat prerouting iif eth0 tcp dport { number1 } dnat to 192.168.X.2:number2'
+nft add rule nat postrouting masquerade
+```
+Make rules permanent:
+```
+cp /etc/nftables.conf /etc/nftables.conf.back
+nft list ruleset | tee /etct/nftables.conf
 ```
