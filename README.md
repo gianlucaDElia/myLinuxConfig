@@ -63,6 +63,24 @@ Activate the modified configuration
 virsh net-destroy default
 virsh net-start default
 ```
+# virsh add sttic ip with network configuration
+Add host in dhcp section
+```
+<network>
+  <name>default</name>
+  <uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</uuid>
+  <forward mode='nat'/>
+  <bridge name='virbr0' stp='on' delay='0'/>
+  <mac address='52:54:00:xx:yy:zz'/>
+  <ip address='192.168.X.1' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='192.168.X.2' end='192.168.X.254'/>
+      <host mac='VM MAC ADDRES' name='VM NAME' ip='STATIC IP TO BE ASSIGNED TO VM' />
+    </dhcp>
+  </ip>
+</network>
+```
+
 # Port forwarding from vms under NAT
 Enable nftables
 ```
