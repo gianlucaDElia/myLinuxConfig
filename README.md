@@ -63,7 +63,7 @@ Activate the modified configuration
 virsh net-destroy default
 virsh net-start default
 ```
-# virsh add sttic ip with network configuration
+# virsh add static ip with network configuration
 Add host in dhcp section
 ```
 <network>
