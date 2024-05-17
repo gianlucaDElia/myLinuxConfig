@@ -103,6 +103,10 @@ To clean all rules
 ```
 nft flush ruleset
 ```
+To restart service
+```
+service nftables restart
+```
 Create nat rules with portforwarding
 ```
 nft add table nat
