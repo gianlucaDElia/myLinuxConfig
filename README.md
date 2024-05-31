@@ -120,3 +120,12 @@ Make rules permanent:
 cp /etc/nftables.conf /etc/nftables.conf.back
 nft list ruleset | tee /etc/nftables.conf
 ```
+# Manage virtual machines
+List all machine
+```
+virsh list --all
+```
+Clone a virtual machine
+```
+virt-clone --original {Domain-Vm-Name-Here} --name {New-Domain-Vm-Name-Here} --file {/var/lib/libvirt/images/File.Name.here}
+```
