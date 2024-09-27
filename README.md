@@ -1,3 +1,24 @@
+# Minimal Debian Install
+After minimal install add:
+```
+xserver-xorg-core xserver-xorg-vide-xxx xinit xinput x11-xserver-utils libx11-dev libxft-dev libxinerama-dev build-essential git make network-manager pipewire
+```
+## DWM
+```
+mkdir suckless
+cd suckless
+git clone https://git.suckless.org/dwm
+git clone https://git.suckless.org/st
+git clone https://git.suckless.org/dmenu
+```
+Install all of them with
+```
+sudo make clean install
+```
+add dwm to .xinitrc
+```
+exec dwm
+```
 # Keyboard configuration
 Edit /etc/X11/xorg.conf.d/00-keyboard.conf
 ```
@@ -63,7 +84,7 @@ Activate the modified configuration
 virsh net-destroy default
 virsh net-start default
 ```
-# virsh add static ip with network configuration
+## virsh add static ip with network configuration
 Add host in dhcp section
 ```
 <network>
@@ -81,7 +102,7 @@ Add host in dhcp section
 </network>
 ```
 
-# Port forwarding from vms under NAT
+## Port forwarding from vms under NAT
 Enable nftables
 ```
 systemctl enable nftables
@@ -120,7 +141,7 @@ Make rules permanent:
 cp /etc/nftables.conf /etc/nftables.conf.back
 nft list ruleset | tee /etc/nftables.conf
 ```
-# Manage virtual machines
+## Manage virtual machines
 List all machine
 ```
 virsh list --all
