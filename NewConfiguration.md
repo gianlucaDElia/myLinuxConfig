@@ -24,5 +24,5 @@ sudo dnf install google-chrome
 
 ## Installing developement libraries
 ```
-sudo dnf install fftw-devel libdb-cxx-devel leveldb-devel hdf5-devel highfive-devel lapack-devel rapidjson-devel boost cmake ninja-build
+sudo dnf install fftw-devel libdb-cxx-devel leveldb-devel hdf5-devel highfive-devel lapack-devel rapidjson-devel boost boost-devel cmake ninja-build
 ```
