@@ -2,5 +2,5 @@
 ## KDE Desktop
 # Installed plasma and libs 
 ```
-sudo pacman -S xclip
+sudo pacman -S xclip ntfs-3g
 ```
