@@ -27,7 +27,16 @@ sudo dnf install kscreen
 sudo dnf install mpv
 sudo dnf install ark
 ```
-
+## Gnome Desktop
+```
+sudo dnf install gnome-session-xsession
+sudo dnf install nautilus
+sudo dnf install gnome-terminal gnome-terminal-nautilus
+sudo dnf install pciutils
+sudo dnf install NetworkManager-tui
+sudo dnf group install multimedia
+sudo dnf install mpv
+```
 ## Install google-chrome
 ```
 sudo dnf install fedora-workstation-repositories
