@@ -1,16 +1,15 @@
 # Fedora Configuration
 After minimal install (C development), add RMP Fusion repo from Fedora quick docs.
 
-## Xmonad Display Nanager
+## BSPWM Display Nanager
 Install base system
 ```
 sudo dnf install @base-x
 sudo dnf install xrandr
 sudo dnf install NetworkManager-tui
 sudo dnf group install multimedia
-sudo dnf install xmonad ghc-xmonad-contrib{,-devel} xmobar
-sudo dnf install libxkbcommon-x11 alacritty
-sudo dnf install feh
+sudo dnf install bspwm sxhkd dmenu
+sudo dnf install kitty
 sudo dnf install mesa-libegl-devel pactl pavucontrol
 sudo dnf isntall mpv
 sudo dnf isntall zathura zathura-djvu zathura-pdf-mupdf zathura-ps
