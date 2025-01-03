@@ -30,18 +30,22 @@ sudo dnf install ark
 ## Gnome Desktop
 ```
 sudo dnf install gnome-session-xsession
+sudo dnf install gnome-tweaks
 sudo dnf install nautilus
 sudo dnf install gnome-terminal gnome-terminal-nautilus
 sudo dnf install pciutils
 sudo dnf install NetworkManager-tui
 sudo dnf group install multimedia
 sudo dnf install mpv
+sudo dnf install eog
+sudo dnf search gnome-text-editor
 ```
 ## Install google-chrome
 ```
 sudo dnf install fedora-workstation-repositories
 sudo dnf config-manager setopt google-chrome.enabled=1
 sudo dnf install google-chrome
+sudo dnf install google-noto-*
 ```
 
 
