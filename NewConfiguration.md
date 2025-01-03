@@ -41,3 +41,13 @@ sudo dnf install google-chrome
 ```
 sudo dnf install fftw-devel libdb-cxx-devel leveldb-devel hdf5-devel highfive-devel lapack-devel rapidjson-devel boost boost-devel cmake ninja-build
 ```
+
+## Suppres hibernation suspend and lid
+```
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+```
+edit file /usr/lib/systemd/logind.conf
+```
+HandleLidSwith=ignore
+HandleLidSwitchDocked=ignore
+```
