@@ -39,6 +39,7 @@ sudo dnf group install multimedia
 sudo dnf install mpv
 sudo dnf install eog
 sudo dnf search gnome-text-editor
+sudo dnf install f41-backgrounds-gnome
 ```
 ## Install google-chrome
 ```
