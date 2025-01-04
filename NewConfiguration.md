@@ -40,6 +40,7 @@ sudo dnf install mpv
 sudo dnf install eog
 sudo dnf search gnome-text-editor
 sudo dnf install f41-backgrounds-gnome
+sudo dnf install source-foundry-hack-fonts
 ```
 ## Install google-chrome
 ```
