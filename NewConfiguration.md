@@ -42,6 +42,20 @@ sudo dnf search gnome-text-editor
 sudo dnf install f41-backgrounds-gnome
 sudo dnf install source-foundry-hack-fonts
 ```
+## Gnome Desktop Wayland
+```
+sudo dnf install gnome-shell
+sudo dnf install gnome-tweaks
+sudo dnf install nautilus file-roller file-roller-nautilus
+sudo dnf install gnome-terminal gnome-terminal-nautilus
+sudo dnf install pciutils
+sudo dnf group install multimedia
+sudo dnf install mpv
+sudo dnf install eog
+sudo dnf search gnome-text-editor
+sudo dnf install source-foundry-hack-fonts
+sudo dnf install liberation-fonts-all
+```
 ## Install google-chrome
 ```
 sudo dnf install fedora-workstation-repositories
