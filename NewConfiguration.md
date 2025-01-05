@@ -15,7 +15,7 @@ sudo dnf isntall mpv
 sudo dnf isntall zathura zathura-djvu zathura-pdf-mupdf zathura-ps
 ```
 
-## KDE Desktop
+## KDE Desktop on X11
 ```
 sudo dnf install plasma-workspace-x11
 sudo dnf install konsole
@@ -27,43 +27,20 @@ sudo dnf install kscreen
 sudo dnf install mpv
 sudo dnf install ark
 ```
-## Gnome Desktop
-```
-sudo dnf install gnome-session-xsession
-sudo dnf install gnome-tweaks
-sudo dnf install nautilus
-sudo dnf install gnome-terminal gnome-terminal-nautilus
-sudo dnf install pciutils
-sudo dnf install NetworkManager-tui
-sudo dnf group install multimedia
-sudo dnf install mpv
-sudo dnf install eog
-sudo dnf search gnome-text-editor
-sudo dnf install f41-backgrounds-gnome
-sudo dnf install source-foundry-hack-fonts
-```
-## Gnome Desktop Wayland
-```
-sudo dnf install gnome-shell
-sudo dnf install gnome-tweaks
-sudo dnf install nautilus file-roller file-roller-nautilus
-sudo dnf install gnome-terminal gnome-terminal-nautilus
-sudo dnf install pciutils
-sudo dnf group install multimedia
-sudo dnf install mpv
-sudo dnf install eog
-sudo dnf search gnome-text-editor
-sudo dnf install source-foundry-hack-fonts
-sudo dnf install liberation-fonts-all
-```
+
 ## Install google-chrome
 ```
 sudo dnf install fedora-workstation-repositories
 sudo dnf config-manager setopt google-chrome.enabled=1
 sudo dnf install google-chrome
-sudo dnf install google-noto-*
 ```
 
+## Fonts
+```
+sudo dnf install google-noto-*
+sudo dnf install liberation-fonts-all
+sudo dnf install source-foundry-hack-fonts
+```
 
 ## Installing developement libraries
 ```
