@@ -39,6 +39,10 @@ sudo dnf group install multimedia
 sudo dnf isntall mpv
 sudo dnf isntall zathura zathura-djvu zathura-pdf-mupdf zathura-ps
 ```
+Monitor info can be obtained via
+```
+swaymsg -t get_outputs
+```
 In sway a layout configuration stores how much of the output space is allocated for a sway_container. In addition a single outut could be sudbdivided in to multiple layouts. For example for subdividing a 1080p in to two layouts:
 ```
 output HDMI-1 res 1920x1080 layout 960x1080@0,0 layout 960x1080@960,0
