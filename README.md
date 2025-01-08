@@ -46,7 +46,7 @@ output HDMI-1 res 1920x1080 layout 960x1080@0,0 layout 960x1080@960,0
 If no layout is specified, the default layout is used with WxH@0,0. In addition the `layout none` option could be used.
 A simple configuration example could be
 ```
-output HDMI-A-1 res 1920x1080
+output HDMI-1 res 1920x1080
 output DP-1 res 1920x1080 pos 1920,0
 ```
 Mirroring could be configured via the mirror option
