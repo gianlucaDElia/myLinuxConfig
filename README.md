@@ -38,6 +38,8 @@ sudo dnf install NetworkManager-tui
 sudo dnf group install multimedia
 sudo dnf isntall mpv
 sudo dnf isntall zathura zathura-djvu zathura-pdf-mupdf zathura-ps
+sudo dnf install xdg-desktop-portal-wlr
+sudo dnf install clang clang-tools-extra
 ```
 Monitor info can be obtained via
 ```
