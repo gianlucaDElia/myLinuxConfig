@@ -39,6 +39,31 @@ sudo dnf group install multimedia
 sudo dnf isntall mpv
 sudo dnf isntall zathura zathura-djvu zathura-pdf-mupdf zathura-ps
 ```
+In sway a layout configuration stores how much of the output space is allocated for a sway_container. In addition a single outut could be sudbdivided in to multiple layouts. For example for subdividing a 1080p in to two layouts:
+```
+output HDMI-1 res 1920x1080 layout 960x1080@0,0 layout 960x1080@960,0
+```
+If no layout is specified, the default layout is used with WxH@0,0. In addition the `layout none` option could be used.
+A simple configuration example could be
+```
+output HDMI-A-1 res 1920x1080
+output DP-1 res 1920x1080 pos 1920,0
+```
+Mirroring could be configured via the mirror option
+```
+output HDMI-1 res 1920x1080
+output DP-1 layout none mirror HDMI-1
+```
+It is also possible to use different resolutions
+```
+output DP-1 res 1280x720
+output HDMI-1 res 1920x1080 mirror DP-1
+```
+Mirroring could be alsoused by adjusting the posistion of the monitors. Workspaces could also be bynded to a particular monitor
+```
+workspace 1 output DP-1
+```
+
 
 # Xorg based configuration
 Xorg based configuration for fedora
