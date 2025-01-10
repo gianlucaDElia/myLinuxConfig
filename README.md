@@ -37,6 +37,7 @@ sudo dnf install sway
 sudo dnf install NetworkManager-tui
 sudo dnf group install multimedia
 sudo dnf isntall mpv
+sudo dnf install pactl pavucontrol
 sudo dnf isntall zathura zathura-djvu zathura-pdf-mupdf zathura-ps
 sudo dnf install xdg-desktop-portal-wlr
 sudo dnf install clang clang-tools-extra
@@ -68,6 +69,22 @@ output HDMI-1 res 1920x1080 mirror DP-1
 Mirroring could be alsoused by adjusting the posistion of the monitors. Workspaces could also be bynded to a particular monitor
 ```
 workspace 1 output DP-1
+```
+The keyboard and touchpad can be configured as
+```
+input "type:keyboard" {
+    xkb_layout us
+    xkb_variant alt-intl
+    xkb_options ctrl:nocaps
+}
+```
+```
+input "type:touchpad" {
+    tap enabled
+    natural_scroll enabled
+    dwt enabled
+    tap_button_map lrm
+}
 ```
 
 
