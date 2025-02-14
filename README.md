@@ -1,3 +1,15 @@
+# General configurration for arch
+## Suspend lid switch
+Edit file /usr/lib/systemd/logind.conf
+```
+HandleLidSwith=ignore
+HandleLidSwitchDocked=ignore
+```
+## Installing developemtne libraries
+```
+sudo paru -S fftw boost boost-libs db leveldb hdf5 highfive lapack rapidjson cmake ninja
+```
+
 # General configuration for fedora
 This are general configuration for fedora distro
 
