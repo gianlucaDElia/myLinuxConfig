@@ -1,10 +1,13 @@
 # General configurration for arch
 ## Suspend lid switch
-Edit file /usr/lib/systemd/logind.conf
+Edit file /etc/systemd/logind.conf
 ```
-HandleLidSwith=ignore
+HandleLidSwitch=ignore
 HandleLidSwitchDocked=ignore
+HandleLidSwitchExternalPower=ignore
 ```
+To apply changes, reload systemd-logind.service
+
 ## Installing developemtne libraries
 ```
 sudo paru -S fftw boost boost-libs db leveldb hdf5 highfive lapack rapidjson cmake ninja
